@@ -1,0 +1,105 @@
+#Imports
+import random, sys
+#List for all the possibilities
+list1 = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+
+def main():
+
+    print("Welcome to Rock-Paper-Scissors-Lizard-Spock!")
+#While loop to get the players choice
+    while True:
+        choice = input(str("Choose Rock, Paper, Scissors, Lizard, or Spock (type 'exit' to quit):\n"))
+        if(choice not in list1 and choice != "exit"):
+            print("Invalid choice")
+            continue
+        computer_choice = random.choice(list1)
+        if(choice != "exit"):
+            print(f"Computer chose: {computer_choice}")
+
+#All the possibilities for Paper
+        if(choice == "Paper"):
+            if(computer_choice == "Paper"):
+                print("It's a tie!")
+            elif(computer_choice == "Scissors"):
+                print("You lost! Scissors beats Paper.")
+            elif(computer_choice == "Lizard"):
+                print("You lost! Lizard beats Paper.")
+            elif(computer_choice == "Spock"):
+                print("You won! Paper beats Spock.")
+            elif(computer_choice == "Rock"):
+                print("You won! Paper beats Rock.")
+
+#All the possibilities for Scissors
+        elif(choice == "Scissors"):
+            if(computer_choice == "Scissors"):
+                print("It's a tie!")
+            elif(computer_choice == "Spock"):
+                print("You lost! Spock beats Scissors.")
+            elif(computer_choice == "Rock"):
+                print("You lost! Rock beats Scissors.")
+            elif(computer_choice == "Paper"):
+                print("You won! Scissors beats Paper.")
+            elif(computer_choice == "Lizard"):
+                print("You won! Scissors beats Lizard.")
+
+
+#All the possibilities for Spock
+        elif(choice == "Spock"):
+            if(computer_choice == "Spock"):
+                print("It's a tie!")
+            elif(computer_choice == "Paper"):
+                print("You lost! Paper beats Spock.")
+            elif(computer_choice == "Lizard"):
+                print("You lost! Lizard beats Spock.")
+            elif(computer_choice == "Rock"):
+                print("You won! Spock beats Rock.")
+            elif(computer_choice == "Scissors"):
+                print("You won! Spock beats Scissors.")
+
+#All the possibilities for Lizard
+        elif(choice == "Lizard"):
+            if(computer_choice == "Lizard"):
+                print("It's a tie!")
+            elif(computer_choice == "Scissors"):
+                print("You lost! Scissors beats Lizard.")
+            elif(computer_choice == "Rock"):
+                print("You lost! Rock beats Lizard.")
+            elif(computer_choice == "Spock"):
+                print("You won! Lizard beats Spock.")
+            elif(computer_choice == "Paper"):
+                print("You won! Lizard beats Paper.")
+
+#All the possibilities for Rock
+        elif(choice == "Rock"):
+            if(computer_choice == "Rock"):
+                print("It's a tie!")
+            elif(computer_choice == "Paper"):
+                print("You lost! Paper beats Rock.")
+            elif(computer_choice == "Spock"):
+                print("You lost! Spock beats Rock.")
+            elif(computer_choice == "Scissors"):
+                print("You won! Rock beats Scissors.")
+            elif(computer_choice == "Lizard"):
+                print("You won! Rock beats Lizard.")
+
+#If choice is exit close the game
+        elif(choice == "exit"):
+            print("Thank you for playing! Goodbye!")
+            sys.exit()
+
+#While loop to check if the player still wants to play         
+        while True:
+            stop_choice = input(str("Do you want to play again? (yes/no):\n"))
+            if(stop_choice == "yes"):
+                break
+            elif(stop_choice == "no"):
+                print("Thank you for playing! Goodbye!")
+                sys.exit()
+            else:
+                print("Invalid choice")
+                continue
+            
+
+
+#Call main()
+main()
